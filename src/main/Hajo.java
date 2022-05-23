@@ -16,4 +16,8 @@ public class Hajo {
         
         return i < 3 ? "talált" : "mellé";
     }
+    
+    public int[] getPozicio(){
+        return pozicio;
+    }
 }
