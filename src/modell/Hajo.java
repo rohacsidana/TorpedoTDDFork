@@ -1,23 +1,37 @@
 package modell;
 
 public class Hajo {
-    private int[] pozicio;
+
+    private int[] poziciok;
+    private int sullyedtekSzama;
+    private boolean elsullyedt;
 
     public Hajo(int[] pozicio) {
-        this.pozicio = pozicio;
+        this.poziciok = pozicio;
+        sullyedtekSzama = 0;
+        elsullyedt = false;
     }
-    
-    public String talalat(int poz){
+
+    public String talalat(int poz) {
         //eldöntés tétele
+
         int i = 0;
-        while(i < 3 && !(pozicio[i] == poz)){
+        while (i < poziciok.length && !(poziciok[i] == poz)) {
             i++;
         }
-        
+        if (i < 3) {
+            sullyedtekSzama++;
+        }
+        elsullyedt = sullyedtekSzama == poziciok.length;
         return i < 3 ? "talált" : "mellé";
     }
+
+    public int[] getPozicio() {
+        return poziciok;
+    }
+
     
-    public int[] getPozicio(){
-        return pozicio;
+    public boolean isElsullyedt() {
+        return elsullyedt;
     }
 }
