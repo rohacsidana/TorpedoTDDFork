@@ -1,5 +1,6 @@
-package main;
+package modell;
 
+import modell.Hajo;
 import java.util.Scanner;
 
 public class Palya {
@@ -40,8 +41,7 @@ public class Palya {
         int poz[] = new int[3];
         for (int i = 0; i < 3; i++) {
             poz[i] = kezd + i;
-        }
-        
+        }        
         return new Hajo(poz);
     }
     
